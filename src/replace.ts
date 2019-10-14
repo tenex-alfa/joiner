@@ -1,8 +1,8 @@
-const replace = (object: any, string: string): string => {
-    for (const key in object) {
-        if (string.includes(key)) {
-            string = string.split(`\${${key}}`).join(object[key]);
-        }
+const replace = (object: any, replacable: any): string => {
+    let string = JSON.stringify(object);
+
+    for (const key in replacable) {
+        string = string.split(`"\${${key}}"`).join(JSON.stringify(replacable[key]));
     }
     return string;
 };

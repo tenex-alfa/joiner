@@ -4,6 +4,10 @@ const sample = {
     sample: "${id}"
 }
 const sampleJoin = {
-    id: "123"
+    id: {
+        my: {
+            sample: "123"
+        }
+    }
 }
 console.log(joiner(sample, sampleJoin));
